@@ -1,0 +1,19 @@
+App\Entity\Location:
+  properties:
+    city:
+      - NotBlank: { message: 'City name cannot be blank.' }
+      - Length:
+          min: 2
+          minMessage: 'City name must be at least {{ limit }} characters long.'
+    latitude:
+      - NotBlank: { message: 'Latitude cannot be blank.' }
+      - Range:
+          min: -90
+          max: 90
+          notInRangeMessage: "Latitude must be between -90 and 90 degrees."
+    longitude:
+      - NotBlank: { message: 'Longitude cannot be blank.' }
+      - Range:
+          min: -180
+          max: 180
+          notInRangeMessage: "Longitude must be between -180 and 180 degrees."
